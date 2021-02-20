@@ -82,6 +82,8 @@
 				var modid = params.get("id")
 
 				$.getJSON('api/database.json', function(data) {
+					if(!data.mods[modid]) return window.location.replace('index.html')
+
 					document.getElementById('mod-name').innerHTML = data.mods[modid].name
 					document.getElementById('mod-description').innerHTML = data.mods[modid].description
 					document.getElementById('mod-creator').innerHTML = 'Created by ' + data.users[data.mods[modid].creator].username

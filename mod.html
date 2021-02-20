@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>User Page - Mission in Moddedland</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Mission in Moddedland</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="mods.html">Mod List</a></li>
+					<li><a href="https://discord.gg/Fkg5hUHzAS">MiS Discord Server</a></li>
+					<li><a href="https://www.kickstarter.com/projects/tons-of-bits/mission-in-snowdriftland-the-advent-calendar-video-game">MiS Kickstarter</a></li>
+					<li><a href="javascript:void( window.open( 'https://form.jotform.com/210498630972058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">Submit a Mod!</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<img id="mod-image" border="0" src="images/icon.png" width="100" height="100">
+						<header>
+							<h2 id="mod-name">mod name</h2>
+							<a id="mod-creator"><h3>mod author</h3></a>
+						</header>
+						<br>
+						<p id="mod-description">mod description</p>
+						<hr />
+						<h3>Downloads:</h3>
+						<div id="mod-downloads">
+							<a id="flashver" class="button primary fit">Flash Version</a><br><br>
+							<a id="0.1.2.6ver" class="button primary fit">Pre-Alpha Demo (Version 0.1.2.6)</a><br><br>
+							<a id="0.1.3.2ver" class="button primary fit">Pre-Alpha Demo (Version 0.1.3.2)</a><br><br>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+				</div>
+				<div class="copyright">
+					&copy; 2021 <a target="_blank" href="http://the0show.github.io/">The0Show</a>. Not affiliated with <a target="_blank" href="http://tons-of-bits.com">tons of bits</a>, the creators of Mission in Snowdriftland.
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+			<script>
+				const params = new URLSearchParams(window.location.search);
+				var modid = params.get("id")
+
+				$.getJSON('api/database.json', function(data) {
+					document.getElementById('mod-name').innerHTML = data.mods[modid].name
+					document.getElementById('mod-description').innerHTML = data.mods[modid].description
+					document.getElementById('mod-creator').innerHTML = 'Created by ' + data.users[data.mods[modid].creator].username
+					document.getElementById('mod-creator').href = 'user.html?id=' + data.mods[modid].creator
+					document.getElementById('mod-image').src = data.mods[modid].image
+
+					if(!data.mods[modid].filesystem.flash){
+						document.getElementById('flashver').innerHTML = `Flash Version (No download available 😢)`
+						document.getElementById('flashver').href = 'javascript:alert("There isn\'t a download available for this version of Mission in Snowdriftland. Big cry 😢")'
+					} else {
+						document.getElementById('flashver').href = data.mods[modid].filesystem.flash
+					}
+					if(!data.mods[modid].filesystem.demo_1){
+						document.getElementById('0.1.2.6ver').innerHTML = `Pre-Alpha Demo (Version 0.1.2.6) (No download available 😢)`
+						document.getElementById('0.1.2.6ver').href = 'javascript:alert("There isn\'t a download available for this version of Mission in Snowdriftland. Big cry 😢")'
+					} else {
+						document.getElementById('0.1.2.6ver').href = data.mods[modid].filesystem.demo_1
+					}
+					if(!data.mods[modid].filesystem.demo_2){
+						document.getElementById('0.1.3.2ver').innerHTML = `Pre-Alpha Demo (Version 0.1.3.2) (No download available 😢)`
+						document.getElementById('0.1.3.2ver').href = 'javascript:alert("There isn\'t a download available for this version of Mission in Snowdriftland. Big cry 😢")'
+					} else {
+						document.getElementById('0.1.3.2ver').href = data.mods[modid].filesystem.demo_2
+					}
+				});
+			</script>
+
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<!--
+	Industrious by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Mod List - Mission in Moddedland</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<link rel="icon" href="images/icon.png" type="image/png" sizes="16x16">
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a class="logo" href="index.html">Mission in Moddedland</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="mods.html">Mod List</a></li>
+					<li><a href="https://discord.gg/Fkg5hUHzAS">MiS Discord Server</a></li>
+					<li><a href="https://www.kickstarter.com/projects/tons-of-bits/mission-in-snowdriftland-the-advent-calendar-video-game">MiS Kickstarter</a></li>
+					<li><a href="javascript:void( window.open( 'https://form.jotform.com/210498630972058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">Submit a Mod!</a></li>
+				</ul>
+			</nav>
+
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2>Mod List</h2>
+						</header>
+						<div id="mods" class="highlights">
+						
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+				</div>
+				<div class="copyright">
+					&copy; 2021 <a target="_blank" href="http://the0show.github.io/">The0Show</a>. Not affiliated with <a target="_blank" href="http://tons-of-bits.com">tons of bits</a>, the creators of Mission in Snowdriftland.
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+			<script>
+				$.getJSON('api/database.json', function(data) {
+					$.each(data.mods, function(i, f) {
+						var modListingElement = `<section><br><div class="content"><header><br><a href="mod.html?id=${f.id}"><img border="0" src="${f.image}" width="100" height="100"></a><br><h3>${f.name}</h3><br></header><br><p>${f.description}</p><br></div><br></section><br>`
+						
+						$(modListingElement).appendTo('#mods')
+					})
+				})
+			</script>
+	</body>
+</html>

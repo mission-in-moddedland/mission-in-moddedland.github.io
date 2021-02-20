@@ -1,0 +1,29 @@
+{
+    "users": {
+        "468093150217371649": {
+            "username": "The0Show",
+            "description": "professional idiot",
+            "discriminator": "8908",
+            "badges": [
+                "website-admin",
+                "website-owner"
+            ],
+            "mods": [
+                "one-life-mod-qWFRtybmx0"
+            ]
+        }
+    },
+    "mods": {
+        "one-life-mod-qWFRtybmx0": {
+            "name": "One Life Mod",
+            "description": "The first mod made for the MiS Demo. With this mod, you only have 1 life.",
+            "image": "https://img.pngio.com/minecraft-heart-png-free-download-fourjayorg-minecraft-heart-png-1184_1184.png",
+            "id": "one-life-mod-qWFRtybmx0",
+            "creator": "468093150217371649",
+            "filesystem": {
+                "demo_1": "filesystem/one-life-mod-qWFRtybmx0/demo_1.zip",
+                "demo_2": "filesystem/one-life-mod-qWFRtybmx0/demo_2.zip"
+            }
+        }
+    }
+}

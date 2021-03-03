@@ -74,7 +74,7 @@
 			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
 			<script>
-				$.getJSON('https://api.github.com/repos/mission-in-moddedland/mission-in-moddedland.github.io', function(data) {
+				$.getJSON('https://api.github.com/repos/mission-in-moddedland/mission-in-moddedland.github.io/releases', function(data) {
 					const latestver = data[0]
 					
 					document.getElementById('vername').innerHTML = latestver.name

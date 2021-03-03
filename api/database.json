@@ -3,6 +3,7 @@
         "468093150217371649": {
             "username": "The0Show",
             "description": "professional idiot",
+            "pfp": "https://cdn.discordapp.com/avatars/468093150217371649/a_4ba6ccfbeea8bc82b2945b583b1b5213.gif?size=128",
             "discriminator": "8908",
             "mods": [
                 "one-life-mod-qWFRtybmx0"
@@ -17,8 +18,9 @@
             "id": "one-life-mod-qWFRtybmx0",
             "creator": "468093150217371649",
             "filesystem": {
-                "demo_1": "filesystem/one-life-mod-qWFRtybmx0/demo_1.zip",
-                "demo_2": "filesystem/one-life-mod-qWFRtybmx0/demo_2.zip"
+                "demo_1": "filesystem/one-life-mod-qWFRtybmx0/one-life-mod-qWFRtybmx0 (MiS Pre-Alpha Demo 0.1.2.6).zip",
+                "demo_2": "filesystem/one-life-mod-qWFRtybmx0/one-life-mod-qWFRtybmx0 (MiS Pre-Alpha Demo 0.1.3.2).zip",
+                "demo_3": "filesystem/one-life-mod-qWFRtybmx0/one-life-mod-qWFRtybmx0 (MiS Pre-Alpha Demo 0.1.3.6).zip"
             }
         }
     }

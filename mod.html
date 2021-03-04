@@ -30,6 +30,7 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="mods.html">Mod List</a></li>
 					<li><a href="changelog.html">Website Changelog</a></li>
+					<li><a href="knowledgebase/submission_guidelines.html">Submission Guidelines</a></li>
 					<li><a href="https://discord.gg/Fkg5hUHzAS">MiS Discord Server</a></li>
 					<li><a href="https://www.kickstarter.com/projects/tons-of-bits/mission-in-snowdriftland-the-advent-calendar-video-game">MiS Kickstarter</a></li>
 					<li><a href="javascript:void( window.open( 'https://form.jotform.com/210498630972058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">Submit a Mod!</a></li>
@@ -55,6 +56,7 @@
 							<a id="0.1.3.2ver" class="button primary fit">Pre-Alpha Demo 0.1.3.2</a><br><br>
 							<a id="0.1.3.6ver" class="button primary fit">Pre-Alpha Demo 0.1.3.6</a><br><br>
 						</div>
+						<a id="reportbutton" onclick="javascript:alert('You are about to be redirected to a pre-filled Google Form. Please fill in the rest of the information to submit your report.')" href="https://docs.google.com/forms/d/e/1FAIpQLSfi5nKyOrE5H2Ai-T0ciWnWBXXPvdXnebVRzqA7xhav9Zzi8g/viewform?usp=sf_link" target="_blank">⚠ Report</a>
 					</div>
 				</div>
 			</section>
@@ -91,6 +93,7 @@
 					document.getElementById('mod-creator').innerHTML = 'Created by ' + data.users[data.mods[modid].creator].username
 					document.getElementById('mod-creator').href = 'user.html?id=' + data.mods[modid].creator
 					document.getElementById('mod-image').src = data.mods[modid].image
+					document.getElementById('reportbutton').href = `https://docs.google.com/forms/d/e/1FAIpQLSfi5nKyOrE5H2Ai-T0ciWnWBXXPvdXnebVRzqA7xhav9Zzi8g/viewform?usp=pp_url&entry.455815943=Mod&entry.263213047=${data.mods[modid].name}&entry.386125154=${data.mods[modid].id}`
 					document.title = data.mods[modid].name + ' - Mission in Moddedland'
 
 					if(!data.mods[modid].filesystem.flash){

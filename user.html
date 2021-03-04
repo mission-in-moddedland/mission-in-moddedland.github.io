@@ -30,6 +30,7 @@
 					<li><a href="index.html">Home</a></li>
 					<li><a href="mods.html">Mod List</a></li>
 					<li><a href="changelog.html">Website Changelog</a></li>
+					<li><a href="knowledgebase/submission_guidelines.html">Submission Guidelines</a></li>
 					<li><a href="https://discord.gg/Fkg5hUHzAS">MiS Discord Server</a></li>
 					<li><a href="https://www.kickstarter.com/projects/tons-of-bits/mission-in-snowdriftland-the-advent-calendar-video-game">MiS Kickstarter</a></li>
 					<li><a href="javascript:void( window.open( 'https://form.jotform.com/210498630972058', 'blank', 'scrollbars=yes, toolbar=no, width=700, height=500' ) ) ">Submit a Mod!</a></li>
@@ -49,6 +50,7 @@
 						<h3>Mods:</h3>
 						<div id="user-mods" class="highlights">
 						</div>
+						<a id="reportbutton" onclick="javascript:alert('You are about to be redirected to a pre-filled Google Form. Please fill in the rest of the information to submit your report.')" href="https://docs.google.com/forms/d/e/1FAIpQLSfi5nKyOrE5H2Ai-T0ciWnWBXXPvdXnebVRzqA7xhav9Zzi8g/viewform?usp=sf_link" target="_blank">⚠ Report</a>	
 					</div>
 				</div>
 			</section>
@@ -83,6 +85,7 @@
 					document.getElementById('user-username').innerHTML = data.users[userid].username + ` (${data.users[userid].username + '#' + data.users[userid].discriminator})`
 					document.getElementById('user-description').innerHTML = data.users[userid].description
 					document.getElementById('user-image').src = data.users[userid].pfp
+					document.getElementById('reportbutton').href = `https://docs.google.com/forms/d/e/1FAIpQLSfi5nKyOrE5H2Ai-T0ciWnWBXXPvdXnebVRzqA7xhav9Zzi8g/viewform?usp=pp_url&entry.455815943=User&entry.175557601=${data.users[userid].username}&entry.113034045=${data.users[userid].id}&entry.191570918=${data.users[userid].username +'%23'+ data.users[userid].discriminator}`
 					document.title = data.users[userid].username + ' - Mission in Moddedland'
 
 					$.each(data.users[userid].mods, function(i, f) {
